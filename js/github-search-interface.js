@@ -10,7 +10,7 @@ var displayUser = function(user) {
 var displayRepos = function(repo) {
   console.log(repo);
   if(repo.description === null || repo.description === "") {
-    $("#repo-list").append("<li class='list-group-item' id='repoId"+repo.id+"'>"+repo.name+"</li>");
+    $("#repo-list").append("<li class='repo-list-item list-group-item' id='repoId"+repo.id+"'>"+repo.name+"</li>");
 
     $('#repoId'+repo.id).click(function(){
       $("#found-repo-name").text(repo.name);
@@ -19,7 +19,7 @@ var displayRepos = function(repo) {
     });
 
   } else {
-    $("#repo-list").append("<li class='list-group-item' id='repoId"+repo.id+"'>"+repo.name+"</li>");
+    $("#repo-list").append("<li class='repo-list-item list-group-item' id='repoId"+repo.id+"'>"+repo.name+"</li>");
 
     $('#repoId'+repo.id).click(function(){
       $("#found-repo-name").text(repo.name);
@@ -37,6 +37,11 @@ $(document).ready(function(){
     var userName = $('#user-name').val();
     $("#user-results").show();
     $("#repo-descriptions").show();
+    $("#repo-list").empty();
+    $("#found-repo-name").empty();
+    $("#found-repo-url").empty();
+    $("#found-repo-description").empty();
+
     currentGitHubSearch.getUser(userName, displayUser, displayRepos);
   });
 });

@@ -1,11 +1,48 @@
+$almost-black: #24221F;
+$background-color: #4B5F6D;
+$div-background-color: #5E7C88;
+$saffron: #FEB41C;
+
+body {
+  background-color: $background-color;
+    h1{
+    font-family: 'Bungee Inline', cursive;
+    color: $saffron;
+  }
+  h3, h4, h5, h6, label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4em;
+    color: $almost-black;
+  }
+  a {
+    color: $saffron;
+  }
+}
+
+#header {
+  background-color: $almost-black;
+  padding: 5px;
+  h5 {
+    color: $saffron;
+  }
+}
 #user-results {
   display: none;
+  background-color: $div-background-color;
+  padding: 15px;
 }
 #repo-descriptions {
   display: none;
+  margin-top: 170px;
 }
 
 .user-avatar-thumb {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 80px;
+  max-height: 80px;
+}
+.repo-list-item {
+  border:1px solid $saffron;
+  background-color: $div-background-color;
+  font-family: 'Lato', sans-serif;
+  color: $almost-black;
 }
