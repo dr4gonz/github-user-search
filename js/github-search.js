@@ -7,7 +7,6 @@ GitHubSearch.prototype.getUser = function(userName, displayUser, displayRepos) {
   if(apiKey === null || apiKey === "" || apiKey === undefined){
     $.get('https://api.github.com/users/' + userName).then(function(response){
       displayUser(response);
-      console.log("without key");
       that.getRepos(response.login, displayRepos);
     }).fail(function(error){
       console.log(error.responseJSON.message);
@@ -15,9 +14,9 @@ GitHubSearch.prototype.getUser = function(userName, displayUser, displayRepos) {
   } else {
     $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
       displayUser(response);
-      console.log("with key");
       that.getRepos(response.login, displayRepos);
     }).fail(function(error){
+      displayUser(null);
       console.log(error.responseJSON.message);
     });
   }
