@@ -14,8 +14,22 @@
           <input type="text" id="user-name" name="user-name">
           <button type="submit" name="search-user-btn">Search</button>
         </form>
-        <div class="col-md-8" id="search-results">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4" id="user-results">
+              <div id="found-user-image">
+              </div>
+              <h3>User Name: <span id="found-user-name"></span></h3>
+              <h4>User Alias: <span id="found-user-alias"></span></h4>
+              <h6>Join Date: <span id="found-user-join-date"></span></h6>
+              <h4>Repositories: </h4>
+              <ul id="repo-list"></ul>
+              </div>
 
+              <div class="col-md-6" id="repo-descriptions">
+
+              </div>
+            </div>
         </div>
       </div>
     </div>
