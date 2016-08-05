@@ -4,12 +4,23 @@ GitHubSearch = function() {};
 
 GitHubSearch.prototype.getUser = function(userName, displayUser, displayRepos) {
   var that = this;
-  $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
-    displayUser(response);
-    that.getRepos(response.login, displayRepos);
-  }).fail(function(error){
-    console.log(error.responseJSON.message);
-  });
+  if(apiKey === null || apiKey === "" || apiKey === undefined){
+    $.get('https://api.github.com/users/' + userName).then(function(response){
+      displayUser(response);
+      console.log("without key");
+      that.getRepos(response.login, displayRepos);
+    }).fail(function(error){
+      console.log(error.responseJSON.message);
+    });
+  } else {
+    $.get('https://api.github.com/users/' + userName + '?access_token=' + apiKey).then(function(response){
+      displayUser(response);
+      console.log("with key");
+      that.getRepos(response.login, displayRepos);
+    }).fail(function(error){
+      console.log(error.responseJSON.message);
+    });
+  }
 };
 
 GitHubSearch.prototype.getRepos = function(userName, displayRepos) {
