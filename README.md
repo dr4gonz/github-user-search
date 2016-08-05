@@ -8,10 +8,11 @@ Matthew Reyes
 ## Description
 This project will allow users to search GitHub for a user via GitHub's api.  A successful search will show the user information, including name, alias, date the account was created, and a list of their personal repositories.  The user can then click a repository to show more information in a separate panel.  The user can interact with the links in the page to take them to the found user's github page or to a specific repo page.
 ## Technologies Usedy
-* html
-* css
+* HTML
+* CSS
 * Javascript
 * jQuery
+* Node.js
 * SASS
 
 ## Instructions
@@ -27,7 +28,7 @@ This project will allow users to search GitHub for a user via GitHub's api.  A s
 * None
 
 ## Contacts
-<a mailto:"mreyez@gmail.com">Matthew Reyes</a>
+Email: mreyez@gmail.com
 
 
 ### License
